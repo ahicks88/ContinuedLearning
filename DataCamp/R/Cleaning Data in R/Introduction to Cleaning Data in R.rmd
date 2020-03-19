@@ -9,27 +9,23 @@ output: pdf_document
 knitr::opts_chunk$set(fig.align="center")
 ```
 #### Data Science Process: Collect >> Clean >> Analyze >> Report
-
+---
 ## What we'll cover in this course:
 1. Exploring raw data
 2. Tidying data
 3. Preparing data for analysis
 4. Putting it all together
-   
-```r
+---   
+```
 # View the first 6 rows of data
-# head(weather)
+head(weather)
 
 # View the last 6 rows of data
-# tail(weather)
+tail(weather)
 
 # View a condensed summary of the data
-# str(weather)
+str(weather)
 ```
+---
 
-```{r}
-x <-5
-x
-```
-
-
+ 
