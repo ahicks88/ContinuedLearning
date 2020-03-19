@@ -8,6 +8,8 @@ output: pdf_document
 ```{r knitr-options, include = FALSE}
 knitr::opts_chunk$set(fig.align="center")
 ```
+Sys.setenv(RSTUDIO_PANDOC="C:/Program Files/RStudio/bin/pandoc")
+
 #### Data Science Process: Collect >> Clean >> Analyze >> Report
 ---
 ## What we'll cover in this course:
@@ -15,7 +17,9 @@ knitr::opts_chunk$set(fig.align="center")
 2. Tidying data
 3. Preparing data for analysis
 4. Putting it all together
+
 ---   
+
 ```
 # View the first 6 rows of data
 head(weather)
