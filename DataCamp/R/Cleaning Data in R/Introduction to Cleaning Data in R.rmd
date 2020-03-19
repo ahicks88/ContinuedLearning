@@ -27,7 +27,7 @@ knitr::opts_chunk$set(fig.align="center")
 # str(weather)
 ```
 
-```r
+```{r}
 x <-5
 x
 ```
