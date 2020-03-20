@@ -2,7 +2,6 @@
 title: "Introduction to Cleaning Data in R"
 author: "Andrew Hicks"
 date: "`r Sys.Date()`"
-output: pdf_document
 ---
 
 ```{r knitr-options, include = FALSE}
@@ -10,8 +9,10 @@ knitr::opts_chunk$set(fig.align="center")
 ```
 
 
-#### Data Science Process: Collect >> Clean >> Analyze >> Report
+### Data Science Process: Collect >> Clean >> Analyze >> Report
+
 ---
+
 ## What we'll cover in this course:
 1. Exploring raw data
 2. Tidying data
