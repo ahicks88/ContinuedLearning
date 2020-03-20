@@ -8,7 +8,7 @@ output: pdf_document
 ```{r knitr-options, include = FALSE}
 knitr::opts_chunk$set(fig.align="center")
 ```
-Sys.setenv(RSTUDIO_PANDOC="C:/Program Files/RStudio/bin/pandoc")
+
 
 #### Data Science Process: Collect >> Clean >> Analyze >> Report
 ---
@@ -31,5 +31,53 @@ tail(weather)
 str(weather)
 ```
 ---
+
+## Exploring RAW data:
+1. Understanding the structure of your data
+ - class() - Class of data object
+ - dim() - Dimension of data
+ - names() - Column names
+ - str() - Preview of data with helpful details
+ - glimpse() - Better version of str() from dplyr
+ - summery() - Summary of data
+ ```
+1. Understanding the structure of your data
+
+# Load the lunch data
+lunch <- read.csv("datasets/lunch_clean.csv")
+# View its class
+class(lunch)
+
+> "data.frame"
+
+# View its dimensions
+dim(lunch)
+
+> 46 7
+
+# Look at the column names
+names(lunch)
+
+> "year" "avg_free" ... "perc_free_red"
+
+str(lunch) # provides dataframe row & columns, column's names, datatype and heading records
+
+# Load dplyr
+library(dplyr)
+
+# View structure of lunch, the dplyr way
+glimpse(lunch)
+
+# View a summary
+summary(lunch)
+```
+
+---
+
+2. Looking at your data
+3. Visualize your data
+
+
+ 
 
  
