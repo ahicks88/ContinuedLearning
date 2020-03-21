@@ -1,7 +1,8 @@
 ---
-title: "Introduction to Cleaning Data in R"
+title: "Introduction and exploring raw data"
 author: "Andrew Hicks"
 date: "`r Sys.Date()`"
+output: html_document
 ---
 
 ```{r knitr-options, include = FALSE}
@@ -9,10 +10,8 @@ knitr::opts_chunk$set(fig.align="center")
 ```
 
 
-### Data Science Process: Collect >> Clean >> Analyze >> Report
-
+#### Data Science Process: Collect >> Clean >> Analyze >> Report
 ---
-
 ## What we'll cover in this course:
 1. Exploring raw data
 2. Tidying data
@@ -46,8 +45,6 @@ str(weather)
 - **class() - Class of data object**
 
     ```
-    # View its class
-
     class(lunch)
 
     > "data.frame"
@@ -56,8 +53,6 @@ str(weather)
 - **dim() - Dimension of data**
 
     ```
-    # View its dimensions
-
     dim(lunch)
 
     > 46 7
@@ -66,8 +61,6 @@ str(weather)
 - **names() - Column names**
 
     ```
-    # Look at the column names
-
     names(lunch)
 
     > "year" "avg_free" ... "perc_free_red"
@@ -77,25 +70,19 @@ str(weather)
 
     ```
     str(lunch) # provides dataframe row & columns, column's names, datatype and heading records
-
-    # Load dplyr
-
-    library(dplyr)
     ```
 
 - **glimpse() - Better version of str() from dplyr**
 
     ```
-    # View structure of lunch, the dplyr way
-
+    # Load dplyr
+    library(dplyr)
     glimpse(lunch)
     ```
 
 - **summery() - Summary of data**
     
     ```  
-    # View a summary      
-
     summary(lunch)
     ```
 
@@ -103,8 +90,66 @@ str(weather)
 
 **2. Looking at your data**
 
+- **head() - View top of dataset**
+
+    ```
+    head(lunch)
+    ```
+- **tail() - View bottom of dataset**
+
+    ```
+    tail(lunch)
+    ```
+
+- **print() - View entire dataset (not recommended!)**
+  
+- **hist() - View histogram of a single variable**
+
+    ```
+    hist(lunch$perc_free_red)
+    ```
+- **plot() - View plot of two variables**
+
+    ```
+    plot(lunch$year, lunch$perc_free_res)
+    ```
+---
+
+**Practice**
+
+    ```
+    # Print bmi to the console
+    print(bmi)
+
+    # View the first 6 rows
+    head(bmi,6)
+
+    # View the first 15 rows
+    head(bmi,15)
+
+    # View the last 6 rows
+    tail(bmi,6)
+
+    # View the last 10 rows
+    tail(bmi,10)
+
+    ```
+
+---
+
 **3. Visualize your data**
 
+    ```
+
+    # Histogram of BMIs from 2008
+    hist(bmi$Y2008)
+
+    # Scatter plot comparing BMIs from 1980 to those from 2008
+    plot(bmi$Y1980, bmi$Y2008)
+
+    ```
+
+---
 
  
 

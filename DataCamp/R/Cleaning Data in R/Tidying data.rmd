@@ -1,0 +1,81 @@
+---
+title: "Tidying data"
+author: "Andrew Hicks"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r knitr-options, include = FALSE}
+knitr::opts_chunk$set(fig.align="center")
+```
+
+Priciples of tidy data:
+- Observations as rows
+- Variables as columns
+- One type of observational units per table
+
+Gather(data, key, value, ...): Gather columns into key-value pairs
+- data: a data frame
+- key: bare name of a new key column
+- value: bare name of a new value column
+```
+# Look at wide_df
+wide_df
+
+# Gathering the columns of wide_df
+gathering(wide_df, my_key, my_val, -col)
+
+```
+
+Spead(data, key, value): Spread key-value pairs into columns
+- data: a data frame
+- key: bare name of column containing keys
+- value: a bare name of column containing values
+```
+# Look at long_df
+long_df
+
+# Spread the key-value pairs of long_df
+spread(long_df, my_key, my_val)
+
+```
+
+Seperate(data, col, into): Seperate one column into multiple
+- data: a data frame
+- col: bare name of column to seperate
+- into: character vector of new column
+```
+# View the treatments data
+treatments
+
+# Seperate year_mo into two columns
+seperate(treatments, year_mo, c("year, "month"))
+
+```
+
+Unite(data, col, ...): Unite multiple columns into one
+- data: a data frame
+- col: bare name of new column
+- ...: bare names of columns to unite
+
+```
+# View treatments data
+treatments
+
+# Unite year and month to form year_mo column
+unite(treatments, year_mo, year, month)
+```
+
+Practice:
+```
+# Apply gather() to bmi and save the result as bmi_long
+bmi_long <- gather(bmi, bmi_val, year, -Country)
+
+# View the first 20 rows of the result
+head(bmi_long,20)
+
+---
+
+
+
+```
