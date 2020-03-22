@@ -1,0 +1,1 @@
+Jumping into text mining with bag of words
