@@ -1,0 +1,10 @@
+---
+title: "Importing data from statistical software packages"
+author: "Andrew Hicks"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r knitr-options, include = FALSE}
+knitr::opts_chunk$set(fig.align="center")
+```
