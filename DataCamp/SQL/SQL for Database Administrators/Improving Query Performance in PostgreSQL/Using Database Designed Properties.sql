@@ -1,0 +1,1 @@
+Using Database Designed Properties
