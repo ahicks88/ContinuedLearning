@@ -9,6 +9,11 @@ output: html_document
 knitr::opts_chunk$set(fig.align="center")
 ```
 
+setwd("C:/Users/Andrew Hicks/Documents/Analytics/GitHub/ContinuedLearning/DataCamp/R/Importing and Cleaning Data with R/Cleaning Data in R/")
+weather <- readRDS("dataset/weather.rds")
+bmi <- read.csv("dataset/bmi_clean.csv")
+census-retail <- read.csv("dataset/census-retail.csv")
+students_with_dates <- read.csv("dataset/students_with_dates.csv")
 
 #### Data Science Process: Collect >> Clean >> Analyze >> Report
 ---
@@ -39,7 +44,7 @@ str(weather)
     ```
     # Load the lunch data
 
-    lunch <- read.csv("datasets/lunch_clean.csv")
+    lunch <- read.csv("dataset/lunch_clean.csv")
     ```
 
 - **class() - Class of data object**

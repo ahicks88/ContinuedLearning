@@ -8,3 +8,9 @@ output: html_document
 ```{r knitr-options, include = FALSE}
 knitr::opts_chunk$set(fig.align="center")
 ```
+
+setwd("C:/Users/Andrew Hicks/Documents/Analytics/GitHub/ContinuedLearning/DataCamp/R/Importing and Cleaning Data with R/Cleaning Data in R/")
+weather <- readRDS("dataset/weather.rds")
+bmi <- read.csv("dataset/bmi_clean.csv")
+census-retail <- read.csv("dataset/census-retail.csv")
+students_with_dates <- read.csv("dataset/students_with_dates.csv")
