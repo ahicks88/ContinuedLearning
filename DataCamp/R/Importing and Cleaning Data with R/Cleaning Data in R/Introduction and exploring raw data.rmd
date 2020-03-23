@@ -122,7 +122,7 @@ str(weather)
 
 **Practice**
 
-    ```
+    ```{r}
     # Print bmi to the console
     print(bmi)
 
@@ -139,7 +139,7 @@ str(weather)
     tail(bmi,10)
 
     ```
-
+    
 ---
 
 **3. Visualize your data**
