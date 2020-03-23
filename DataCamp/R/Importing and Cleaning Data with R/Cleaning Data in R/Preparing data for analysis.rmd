@@ -13,3 +13,45 @@ weather <- readRDS("dataset/weather.rds")
 bmi <- read.csv("dataset/bmi_clean.csv")
 census-retail <- read.csv("dataset/census-retail.csv")
 students_with_dates <- read.csv("dataset/students_with_dates.csv")
+
+---
+
+```{r}
+class("hello")
+
+class(factor("yes"))
+
+class(3.844)
+
+class(TRUE)
+
+class(77L)
+```
+
+Type coversions:
+```{r}
+as.character(2016)
+
+as.numeric(TRUE)
+
+as.integer(99)
+
+as.factor("something")
+```
+
+Lubridate Package: Coerce strings to dataset
+```{r}
+# Load the lubridate package
+library(lubridate)
+
+# Experiment with basic lubridate functions
+ymd("2015-08-25")
+
+ymd("2015 August 25")
+
+mdy("August 25, 2015")
+
+hms("13:33:09")
+
+ymd_hms("2015/08/25 13:33:09")
+```
