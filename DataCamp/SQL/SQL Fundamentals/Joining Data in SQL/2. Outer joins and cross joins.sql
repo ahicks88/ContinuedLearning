@@ -1,7 +1,7 @@
 Outer joins and cross joins
 
 setwd("C:/Users/Andrew Hicks/Documents/Analytics/GitHub/ContinuedLearning/DataCamp/SQL/SQL Fundamental/Joining Data in SQL/Datasets")
-
+-------------------------------------------------------------------------------------------------------------------------------------
 -- LEFT and RIGHT JOINs
 SELECT p1.country, prime_minister, preseident
 FROM prime_minister AS p1

@@ -1,7 +1,7 @@
 Aggregate Functions
 
 setwd("C:/Users/Andrew Hicks/Documents/Analytics/GitHub/ContinuedLearning/DataCamp/SQL/SQL Fundamental/Introduction to SQL/Datasets")
-
+-------------------------------------------------------------------------------------------------------------------------------------
 -- Aggregate functions
 SELECT SUM(duration) FROM films;
 
