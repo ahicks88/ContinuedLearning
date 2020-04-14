@@ -139,3 +139,135 @@ ORDER BY subquery.lang_num DESC;
 -------------------------------------------------------------------------------------------------------------------------------------
 -- Advanced subquery:
 -------------------------------------------------------------------------------------------------------------------------------------
+-- Select fields
+SELECT c.name, c.continent, MAX(e.inflation_rate) AS inflation_rate
+  -- From countries
+  FROM countries c
+  	-- Join to economies
+  	INNER JOIN economies e
+    -- Match on code
+    USING(code)
+-- Where year is 2015
+WHERE year = 2015
+
+GROUP BY c.name, c.continent;
+-------------------------------------------------------------------------------------------------------------------------------------
+-- Select the maximum inflation rate as max_inf
+SELECT MAX(inflation_rate) AS max_inf
+  -- Subquery using FROM (alias as subquery)
+  FROM (
+      SELECT name, continent, inflation_rate
+      FROM countries
+      INNER JOIN economies
+      USING (code)
+      WHERE year = 2015) AS Subquery
+-- Group by continent
+GROUP BY continent;
+-------------------------------------------------------------------------------------------------------------------------------------
+-- Select fields
+SELECT name, continent, inflation_rate
+  -- From countries
+  FROM countries
+	-- Join to economies
+	INNER JOIN economies
+	-- Match on code
+	ON countries.code = economies.code
+  -- Where year is 2015
+  WHERE year = 2015
+    -- And inflation rate in subquery (alias as subquery)
+    AND inflation_rate IN (
+        SELECT MAX(inflation_rate) AS max_inf
+        FROM (
+             SELECT name, continent, inflation_rate
+             FROM countries
+             INNER JOIN economies
+             ON countries.code = economies.code
+             WHERE year = 2015) AS subquery
+      -- Group by continent
+        GROUP BY continent);
+-------------------------------------------------------------------------------------------------------------------------------------
+-- Subquery challenge:
+-------------------------------------------------------------------------------------------------------------------------------------
+-- Select fields
+SELECT code, inflation_rate, unemployment_rate
+  -- From economies
+  FROM economies
+  -- Where year is 2015 and code is not in
+  WHERE year = 2015 AND code NOT IN
+  	-- Subquery
+  	(SELECT code
+  	 FROM countries
+  	 WHERE (gov_form = 'Constitutional Monarchy' OR gov_form LIKE '%Republic%'))
+-- Order by inflation rate
+ORDER BY inflation_rate ASC;
+-------------------------------------------------------------------------------------------------------------------------------------
+-- Course review:
+-------------------------------------------------------------------------------------------------------------------------------------
+Types of joins
+> INNER JOIN
+  > Self-joins
+> OUTER JOIN
+  > LEFT JOIN
+  > RIGHT JOIN
+  > FULL JOIN
+> CROSS JOIN
+> Semi-join / Anti-join
+-------------------------------------------------------------------------------------------------------------------------------------
+-- Final challenge:
+-------------------------------------------------------------------------------------------------------------------------------------
+-- Select fields
+SELECT DISTINCT c.name, e.total_investment, e.imports
+  -- From table (with alias)
+  FROM countries AS c
+    -- Join with table (with alias)
+    LEFT JOIN economies AS e
+      -- Match on code
+      ON (c.code = e.code
+      -- and code in Subquery
+        AND c.code IN (
+          SELECT l.code
+          FROM languages AS l
+          WHERE official = 'true'
+        ) )
+  -- Where region and year are correct
+  WHERE e.year = 2015 AND c.region = 'Central America'
+-- Order by field
+ORDER BY c.name, e.total_investment, e.imports;
+-------------------------------------------------------------------------------------------------------------------------------------
+-- Final challenge (2):
+-------------------------------------------------------------------------------------------------------------------------------------
+-- Select fields
+SELECT c.region, c.continent , AVG(p.fertility_rate) AS avg_fert_rate
+  -- From left table
+  FROM countries AS c
+    -- Join to right table
+    INNER JOIN populations AS p
+      -- Match on join condition
+      ON c.code = p.country_code
+  -- Where specific records matching some condition
+  WHERE p.year = 2015
+-- Group appropriately
+GROUP BY c.region, c.continent
+-- Order appropriately
+ORDER BY avg_fert_rate;
+-------------------------------------------------------------------------------------------------------------------------------------
+-- Final challenge (3):
+-------------------------------------------------------------------------------------------------------------------------------------
+-- Select fields
+SELECT cities.name, cities.country_code, cities.city_proper_pop, cities.metroarea_pop,  
+      -- Calculate city_perc
+     city_proper_pop / metroarea_pop * 100 AS city_perc
+  -- From appropriate table
+  FROM cities
+  -- Where 
+  WHERE name IN
+    -- Subquery
+    (SELECT capital
+     FROM countries
+     WHERE (continent = 'Europe'
+        OR continent LIKE '%America'))
+       AND metroarea_pop IS NOT NULL
+-- Order appropriately
+ORDER BY city_perc DESC
+-- Limit amount
+LIMIT 10;
