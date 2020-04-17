@@ -1,0 +1,6 @@
+SQL Skillsets:
+
+- Joins
+- Correlated Subqueries
+- Multiple/Netested Subqueries
+- Common Table Expression
