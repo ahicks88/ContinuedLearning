@@ -16,7 +16,8 @@ Functions:
 - OVER()
 - RANK()
 - PARTITION BY
--
+- ROW_NUMBER
+- LAG
 
 More Practice:
 - CTEs
@@ -30,4 +31,5 @@ More Practice:
         UNBOUNDED PRECEDING
         UNBOUNDED FOLLOWING
         CURRENT ROW
+- LAG
 -
