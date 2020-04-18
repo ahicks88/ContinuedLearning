@@ -3,16 +3,27 @@ SQL Skillsets:
 - Joins
 - Correlated Subqueries
 - Multiple/Netested Subqueries
-- Common Table Expression
+- Common Table Expression (CTEs)
 
 
 
 Functions:
+- EXTRACT()     -- can be used to extract day/month/year from a date.
 - OVER()
 - RANK()
 - PARTITION BY
+-
 
 More Practice:
+- CTEs
 - OVER()
 - RANK()
 - PARTITION BY
+- Sliding Windows
+    ROWS BETWEEN <start> AND <finish>;
+        PRECEDING
+        FOLLOWING
+        UNBOUNDED PRECEDING
+        UNBOUNDED FOLLOWING
+        CURRENT ROW
+-
