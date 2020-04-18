@@ -4,3 +4,15 @@ SQL Skillsets:
 - Correlated Subqueries
 - Multiple/Netested Subqueries
 - Common Table Expression
+
+
+
+Functions:
+- OVER()
+- RANK()
+- PARTITION BY
+
+More Practice:
+- OVER()
+- RANK()
+- PARTITION BY
