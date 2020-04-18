@@ -1,0 +1,115 @@
+
+SQL:
+---
+1)  Course:         Introduction to SQL
+    Certificate:    13015047 - https://drive.google.com/open?id=1nIt5N9B42ffIcAyy5l9ss3hXbN-ftQcs
+    Website:        https://learn.datacamp.com/courses/introduction-to-sql
+    Hours:          4
+    Videos:         1
+    Exercises:      41
+    XP:             3450
+2)  Course:         Joining Data in SQL
+    Certificate:    13186905 - https://drive.google.com/open?id=1gtoTH1_NsXhSiTMLD_DyDz--fmgkPlf-
+    Website:        https://learn.datacamp.com/courses/joining-data-in-postgresql
+    Hours:          5
+    Videos:         13
+    Exercises:      53
+    XP:             4400
+3)  Course:         Intermediate SQL
+    Certificate:    13397222 - https://drive.google.com/open?id=1EFd8LWg9MUQvSBLlprfhcGNrCka5BR8B
+    Website:        https://learn.datacamp.com/courses/intermediate-sql
+    Hours:          4
+    Videos:         15
+    Exercises:      55
+    XP:             4700
+
+4)  Course:         
+    Certificate:    
+    Website:        
+    Hours:          
+    Videos:         
+    Exercises:      
+    XP:  
+5)  Course:         
+    Certificate:    
+    Website:        
+    Hours:          
+    Videos:         
+    Exercises:      
+    XP:   
+
+Python:
+---
+1)  Course:         
+    Certificate:    
+    Website:        
+    Hours:          
+    Videos:         
+    Exercises:      
+    XP:   
+2)  Course:         
+    Certificate:    
+    Website:        
+    Hours:          
+    Videos:         
+    Exercises:      
+    XP:   
+3)  Course:         
+    Certificate:    
+    Website:        
+    Hours:          
+    Videos:         
+    Exercises:      
+    XP:   
+4)  Course:         
+    Certificate:    
+    Website:        
+    Hours:          
+    Videos:         
+    Exercises:      
+    XP:  
+5)  Course:         
+    Certificate:    
+    Website:        
+    Hours:          
+    Videos:         
+    Exercises:      
+    XP:   
+
+R:
+---
+1)  Course:         Introduction to R
+    Certificate:    12796805 - https://drive.google.com/open?id=1ecgFMn8ElQXTDxrs9Dqq4Ul_-6fMXjst
+    Website:        https://learn.datacamp.com/courses/free-introduction-to-r
+    Hours:          4
+    Videos:         0
+    Exercises:      62
+    XP:             6200
+2)  Course:         Introduction to the Tidyverse
+    Certificate:    9555417 - https://drive.google.com/open?id=1BUqBpRibKtn3DUbuZkhYlHxlTL_tjm7J
+    Website:        https://learn.datacamp.com/courses/introduction-to-the-tidyverse
+    Hours:          4
+    Videos:         16
+    Exercises:      50
+    XP:             4150
+3)  Course:         
+    Certificate:    
+    Website:        
+    Hours:          
+    Videos:         
+    Exercises:      
+    XP:   
+4)  Course:         
+    Certificate:    
+    Website:        
+    Hours:          
+    Videos:         
+    Exercises:      
+    XP:  
+5)  Course:         
+    Certificate:    
+    Website:        
+    Hours:          
+    Videos:         
+    Exercises:      
+    XP:  

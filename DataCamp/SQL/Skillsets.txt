@@ -1,13 +1,17 @@
 SQL Skillsets:
-
 - Joins
 - Correlated Subqueries
 - Multiple/Netested Subqueries
 - Common Table Expression (CTEs)
+- Window Functions
 
 
 
 Functions:
+- JOINS (INNER/LEFT/RIGHT/OUTER/SELF)
+- GROUP BY
+- ORDER BY
+- CASE WHEN THEN
 - EXTRACT()     -- can be used to extract day/month/year from a date.
 - OVER()
 - RANK()
