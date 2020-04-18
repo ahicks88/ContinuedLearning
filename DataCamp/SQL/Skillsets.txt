@@ -14,10 +14,16 @@ Functions:
 - CASE WHEN THEN
 - EXTRACT()     -- can be used to extract day/month/year from a date.
 - OVER()
-- RANK()
 - PARTITION BY
-- ROW_NUMBER
-- LAG
+- ROW_NUMBER() always assigns unique numbers, wven if two rows' values are the same
+- RANK() assigns the same number to rows with identical values, skipping over the next numbers in such cases
+- DENSE_RANK() also assigns the same number to rows with identical values, but doesn't skip over the next numbers
+- LAG(column,n) returns column's value at the row n rows before the current row
+- LEAD(column, n) returns column's value at the row n rows after the current row
+- FIRST_VALU(column) returns the first value in the table or partition
+- LAST_VALUE(column) returns the last value in the table or partition
+- NTILE(n) splits the data into n approximately equal pages
+
 
 More Practice:
 - CTEs
