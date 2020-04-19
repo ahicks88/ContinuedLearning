@@ -4,6 +4,7 @@ SQL Skillsets:
 - Multiple/Netested Subqueries
 - Common Table Expression (CTEs)
 - Window Functions
+- Moving Averages using Sliding Window Functions
 
 
 
@@ -23,7 +24,7 @@ Functions:
 - FIRST_VALU(column) returns the first value in the table or partition
 - LAST_VALUE(column) returns the last value in the table or partition
 - NTILE(n) splits the data into n approximately equal pages
-
+- CROSSTAB
 
 More Practice:
 - CTEs
@@ -38,4 +39,4 @@ More Practice:
         UNBOUNDED FOLLOWING
         CURRENT ROW
 - LAG
--
+- CROSSTAB
