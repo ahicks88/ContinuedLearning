@@ -193,35 +193,136 @@ WHERE
 GROUP BY Country, ROLLUP(Medal)
 ORDER BY COuntry ASC, Medal ASC;
 -------------------------------------------------------------------------------------------------------------------------------------
-
+-- Enter CUBE
+SELECT
+    Country, Medal, COUNT(*) AS Awards
+FROM Summer_Medals
+WHERE
+    Year = 2008 AND Country IN ('CHN', 'RUS')
+GROUP BY CUBE(COuntry, Medal)
+ORDER BY Country ASC, Medal ASC;
 -------------------------------------------------------------------------------------------------------------------------------------
-
+-- Country-level subtotals:
 -------------------------------------------------------------------------------------------------------------------------------------
-
+-- Count the gold medals per country and gender
+SELECT
+  Country,
+  gender,
+  COUNT(*) AS Gold_Awards
+FROM Summer_Medals
+WHERE
+  Year = 2004
+  AND Medal = 'Gold'
+  AND Country IN ('DEN', 'NOR', 'SWE')
+-- Generate Country-level subtotals
+GROUP BY country, ROLLUP(Gender)
+ORDER BY Country ASC, Gender ASC;
 -------------------------------------------------------------------------------------------------------------------------------------
-
+-- All group-level subtotals:
 -------------------------------------------------------------------------------------------------------------------------------------
-
+-- Count the medals per country and medal type
+SELECT
+  Gender,
+  Medal,
+  COUNT(*) AS Awards
+FROM Summer_Medals
+WHERE
+  Year = 2012
+  AND Country = 'RUS'
+-- Get all possible group-level subtotals
+GROUP BY CUBE(Gender, Medal)
+ORDER BY Gender ASC, Medal ASC;
 -------------------------------------------------------------------------------------------------------------------------------------
-
+-- A survey of useful functions:
 -------------------------------------------------------------------------------------------------------------------------------------
-
+-- Annihilating nulls
+SELECT
+    COALESCE(Country, 'Both countries') AS Country
+    COALESCE(Medal, 'All medals') AS Medal,
+    COUNT(*) AS Awards
+FROM Summer_Medals
+WHERE
+    Year = 2008 AND Country IN('CHN', 'RUS')
+GROUP BY RULLUP(Country, Medal)
+ORDER BY COuntry ASC, Medal ASC;
 -------------------------------------------------------------------------------------------------------------------------------------
+-- Query and result
+-- Before:
+WITH Country_Medals AS (
+        Country, COUNT(*) AS medals
+    FROM Summer_Medals
+    WHERE Year = 2012
+        AND Country IN ('CHN','RUS','USA')
+        AND Medal = 'Gold'
+        AND Sport = 'Gymnastics'
+    GROUP BY Country),
 
+    SELECT
+        Country
+        RANK() OVER (ORDER BY Medals DESC) AS Rank
+    FROM Country_Medals
+    ORDER BY Rank ASC;
+
+-- After:
+WITH Country_Medals AS (...)
+
+    Country_ranks AS (...)
+
+    SELECT STRING_AGG(Country, ', ')
+    FROM Country_Medals;
 -------------------------------------------------------------------------------------------------------------------------------------
-
+-- Cleaning up results:
 -------------------------------------------------------------------------------------------------------------------------------------
-
+SELECT
+  -- Replace the nulls in the columns with meaningful text
+  COALESCE(Country, 'All countries') AS Country,
+  COALESCE(Gender, 'All genders') AS Gender,
+  COUNT(*) AS Awards
+FROM Summer_Medals
+WHERE
+  Year = 2004
+  AND Medal = 'Gold'
+  AND Country IN ('DEN', 'NOR', 'SWE')
+GROUP BY ROLLUP(Country, Gender)
+ORDER BY Country ASC, Gender ASC;
 -------------------------------------------------------------------------------------------------------------------------------------
-
+-- Summarizing results:
 -------------------------------------------------------------------------------------------------------------------------------------
+WITH Country_Medals AS (
+  SELECT
+    Country,
+    COUNT(*) AS Medals
+  FROM Summer_Medals
+  WHERE Year = 2000
+    AND Medal = 'Gold'
+  GROUP BY Country)
 
+  SELECT
+    Country,
+    -- Rank countries by the medals awarded
+    RANK() OVER (ORDER BY Medals DESC) AS Rank
+  FROM Country_Medals
+  ORDER BY Rank ASC;
 -------------------------------------------------------------------------------------------------------------------------------------
+WITH Country_Medals AS (
+  SELECT
+    Country,
+    COUNT(*) AS Medals
+  FROM Summer_Medals
+  WHERE Year = 2000
+    AND Medal = 'Gold'
+  GROUP BY Country),
 
--------------------------------------------------------------------------------------------------------------------------------------
+  Country_Ranks AS (
+  SELECT
+    Country,
+    RANK() OVER (ORDER BY Medals DESC) AS Rank
+  FROM Country_Medals
+  ORDER BY Rank ASC)
 
--------------------------------------------------------------------------------------------------------------------------------------
-
--------------------------------------------------------------------------------------------------------------------------------------
-
+-- Compress the countries column
+SELECT STRING_AGG(Country, ', ')
+FROM Country_Ranks
+-- Select only the top three ranks
+WHERE Rank <= 3;
 -------------------------------------------------------------------------------------------------------------------------------------

@@ -23,13 +23,13 @@ SQL:
     Exercises:      55
     XP:             4700
 
-4)  Course:         
-    Certificate:    
-    Website:        
-    Hours:          
-    Videos:         
-    Exercises:      
-    XP:  
+4)  Course:         PostgreSQL Summary Stats and Window Functions
+    Certificate:    13474244 - https://www.datacamp.com/statement-of-accomplishment/course/cc06c165f61d81096296234121714607b3682ab1
+    Website:        https://learn.datacamp.com/courses/postgresql-summary-stats-and-window-functions
+    Hours:          4
+    Videos:         12
+    Exercises:      44
+    XP:             3550
 5)  Course:         
     Certificate:    
     Website:        

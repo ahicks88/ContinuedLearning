@@ -25,6 +25,13 @@ Functions:
 - LAST_VALUE(column) returns the last value in the table or partition
 - NTILE(n) splits the data into n approximately equal pages
 - CROSSTAB
+- ROLLUP()
+- CUBE()
+- COALESCE() takes a listg of values and returns the first non-null value, gong from left to right
+- STRING_AGG(column, separator) takes all the values of a column and concatenates them with seperator in between each value
+
+
+
 
 More Practice:
 - CTEs
@@ -40,3 +47,7 @@ More Practice:
         CURRENT ROW
 - LAG
 - CROSSTAB
+- ROLLUP()
+- CUBE()
+- COALESCE()
+- STRING_AGG()
