@@ -8,3 +8,24 @@ output: html_document
 ```{r knitr-options, include = FALSE}
 knitr::opts_chunk$set(fig.align="center")
 ```
+
+```{r}
+con <- dbConnect(RMySQL::MySQL(), # Construct SQL driver
+    dbname = "company",
+    host = "courses.csrrinzqubik.us-east-1.rds.amazonaws.com",
+    port = 3306,
+    user = "student",
+    password = "datacamp")
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
